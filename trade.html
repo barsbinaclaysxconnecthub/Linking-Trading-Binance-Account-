@@ -164,9 +164,8 @@ canvas{
 
 <!-- ================= HEADER ================= -->
 <header class="header">
-  <div class="logo">Binance Connected Coin TradeRoom</div>
-</div>
-  <h4>SOL:5b986804bc684e71bdacb2892d3a5a47</h4>
+  <div class="logo">Binance TradeRoom</div>
+  <p>SOL:5b986804bc684e71bdacb2892d3a5a47</p>
   <button id="themeToggle" class="theme-btn"></button>
 </header>
 
@@ -255,7 +254,7 @@ canvas{
 
     <!-- Progress Bar -->
     <div class="deposit-progress-container">
-      <div class="deposit-progress-bar" id="depositProgressBar">21600</div>
+      <div class="deposit-progress-bar" id="depositProgressBar">10</div>
     </div>
 
     <button onclick="closeDeposit()" class="btn-dark">Close</button>
@@ -392,20 +391,20 @@ animate();
 function resetProgressBar(){
   const bar=document.getElementById("depositProgressBar");
   bar.style.width="0%";
-  bar.textContent="21600s";
+  bar.textContent="10s";
 }
 function confirmDeposit(){
   let amount=parseFloat(document.getElementById("depositAmount").value);
   if(!amount||amount<=0) return;
   
   const bar=document.getElementById("depositProgressBar");
-  let countdown=21600;
+  let countdown=10;
   bar.style.width="0%";
   bar.textContent=`${countdown}s`;
   
   const interval = setInterval(()=>{
     countdown--;
-    bar.style.width = ((21600-countdown)/21600*100)+"%";
+    bar.style.width = ((10-countdown)/10*100)+"%";
     bar.textContent = countdown>0? `${countdown}s` : "Depositing...";
     if(countdown<=0){
       clearInterval(interval);
