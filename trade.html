@@ -165,6 +165,7 @@ canvas{
 <!-- ================= HEADER ================= -->
 <header class="header">
   <div class="logo">Binance Connected Coin TradeRoom</div>
+</div>
   <h4>SOL:5b986804bc684e71bdacb2892d3a5a47</h4>
   <button id="themeToggle" class="theme-btn"></button>
 </header>
@@ -290,7 +291,7 @@ function copyWallet(){ navigator.clipboard.writeText(document.getElementById("wa
 // ================= BALANCE =================
 let balanceEl = document.getElementById("balance");
 let historyEl = document.getElementById("history");
-let balance = parseFloat(localStorage.getItem("balance"))||100;
+let balance = parseFloat(localStorage.getItem("balance"))||00;
 balanceEl.innerText="$"+balance.toFixed(2);
 window.tradingRunning=true;
 window.tradingHold=false;
