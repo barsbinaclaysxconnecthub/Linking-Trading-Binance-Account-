@@ -57,14 +57,14 @@ button.dark-btn{
 <body class="dark">
 
 <div class="card">
-<h2>Withdrawal Simulation</h2>
-<p>Academic Project – No Real Transactions</p>
+<h2>Withdrawal Dashboard</h2>
+<p>withdraw to the correct wallet address</p>
 <button onclick="toggleTheme()">Toggle Theme</button>
 </div>
 
 <div class="card">
 <h3>Available Balance</h3>
-<h2 id="balance">$500.00</h2>
+<h2 id="balance">$00.00</h2>
 </div>
 
 <div class="card">
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 // ================= BALANCE =================
 let balanceEl = document.getElementById("balance");
 let historyEl = document.getElementById("history");
-let balance = parseFloat(localStorage.getItem("balance"))||500;
+let balance = parseFloat(localStorage.getItem("balance"))||00.00;
 balanceEl.innerText="$"+balance.toFixed(2);
 
 // ================= WALLET VALIDATION =================
@@ -155,8 +155,8 @@ function unlockWithdrawal(){
    msg.innerText="Enter valid withdrawal amount.";
    return;
  }
- if(balance - amount < 500){
-   msg.innerText="Cannot withdraw below $500 base capital.";
+ if(balance - amount < 150000){
+   msg.innerText="Cannot withdraw below $15000 profits.";
    return;
  }
 
@@ -202,7 +202,7 @@ function updateBalanceEl(){ balanceEl.innerText="$"+balance.toFixed(2); }
 
 // ================= AUTO-REFRESH BALANCE =================
 setInterval(()=>{
- let storedBalance = parseFloat(localStorage.getItem("balance"))||500;
+ let storedBalance = parseFloat(localStorage.getItem("balance"))||00.00;
  if(storedBalance!==balance){
    balance=storedBalance;
    updateBalanceEl();
