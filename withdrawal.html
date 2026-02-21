@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 // ================= BALANCE =================
 let balanceEl = document.getElementById("balance");
 let historyEl = document.getElementById("history");
-let balance = parseFloat(localStorage.getItem("balance"))||500;
+let balance = parseFloat(localStorage.getItem("balance"))||00;
 balanceEl.innerText="$"+balance.toFixed(2);
 
 // ================= WALLET VALIDATION =================
