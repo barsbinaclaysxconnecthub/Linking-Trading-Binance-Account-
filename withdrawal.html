@@ -159,11 +159,7 @@ function unlockWithdrawal(){
    msg.innerText="Cannot withdraw below $500 PROFITS.";
    return;
  }
-  if(!amount || amount > balance){
-   msg.innerText="Cannot withdraw above current balance.";
-   return;
-   }
-
+  
  // Start 10s countdown with progress bar
  let countdown=10;
  bar.style.width="0%";
