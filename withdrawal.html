@@ -159,6 +159,10 @@ function unlockWithdrawal(){
    msg.innerText="Cannot withdraw below $500 PROFITS.";
    return;
  }
+  if(!amount || amount > balance){
+   msg.innerText="Cannot withdraw above current balance.";
+   return;
+   }
 
  // Start 10s countdown with progress bar
  let countdown=10;
@@ -202,7 +206,7 @@ function updateBalanceEl(){ balanceEl.innerText="$"+balance.toFixed(2); }
 
 // ================= AUTO-REFRESH BALANCE =================
 setInterval(()=>{
- let storedBalance = parseFloat(localStorage.getItem("balance"))||500;
+ let storedBalance = parseFloat(localStorage.getItem("balance"))||00;
  if(storedBalance!==balance){
    balance=storedBalance;
    updateBalanceEl();
